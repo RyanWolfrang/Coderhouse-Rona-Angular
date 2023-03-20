@@ -1,0 +1,39 @@
+$fuenteheader: 'Gotham Black', sans-serif;
+$fuenteheaderlinks: 'Gotham Light', sans-serif;
+
+header{
+    img{
+        width: 60px;
+        height: 50px;
+        margin-left: 7px;
+    }
+    h1{
+        color: #333;
+        font-family: $fuenteheader;
+        display: inline-flex;
+        position: absolute;
+        margin-left: 7px;
+    }
+    span{
+        font-family: $fuenteheader;
+        color: #D81F02;
+    }
+    a{
+        font-family: $fuenteheaderlinks;
+        color: #333;
+        margin-top: 5px;
+        font-size: 25px;
+        text-decoration: none;
+    }
+    a:hover{
+        background-color: #A68C6D;
+        transition: 0.8s;
+    }
+}
+ul{
+    margin-left: 120px;
+}
+nav{
+    background: rgb(235,220,203);
+    background: linear-gradient(90deg, rgba(235,220,203,1) 14%, rgba(195,186,170,1) 53%, rgba(210,187,160,1) 91%);
+}

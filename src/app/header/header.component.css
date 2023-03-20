@@ -1,0 +1,36 @@
+header img {
+  width: 60px;
+  height: 50px;
+  margin-left: 7px;
+}
+header h1 {
+  color: #333;
+  font-family: "Gotham Black", sans-serif;
+  display: inline-flex;
+  position: absolute;
+  margin-left: 7px;
+}
+header span {
+  font-family: "Gotham Black", sans-serif;
+  color: #D81F02;
+}
+header a {
+  font-family: "Gotham Light", sans-serif;
+  color: #333;
+  margin-top: 5px;
+  font-size: 25px;
+  text-decoration: none;
+}
+header a:hover {
+  background-color: #A68C6D;
+  transition: 0.8s;
+}
+
+ul {
+  margin-left: 120px;
+}
+
+nav {
+  background: rgb(235, 220, 203);
+  background: linear-gradient(90deg, rgb(235, 220, 203) 14%, rgb(195, 186, 170) 53%, rgb(210, 187, 160) 91%);
+}/*# sourceMappingURL=header.component.css.map */
