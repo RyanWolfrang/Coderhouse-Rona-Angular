@@ -1,7 +1,7 @@
 $fuenteprin: 'Gotham', sans-serif;
 $fuenteheader: 'Gotham Black', sans-serif;
 $fuenteheaderlinks: 'Gotham Light', sans-serif;
-
+/* ETIQUETA GENERAL */
 *{
     font-family: $fuenteprin;
     margin: 0;
@@ -11,6 +11,67 @@ $colores: (
     colorbody: #ba957d,
     colorfooter: #F2EFC7,
 );
+/* Gato con la foto en la izq. */
+@mixin gato-izq{
+    padding-left: 18px;
+    padding-bottom: 18px;
+    display: flex;
+    border-bottom: 2px solid #333;
+        img{
+            box-shadow: 0 0 15px #222;
+        }
+}
+/* Gato con la foto en la der. */
+@mixin gato-der{
+    padding-bottom: 18px;
+    padding-right: 20px;
+    display: flex;
+    border-bottom: 2px solid #333;
+    img{
+        box-shadow: 0 0 15px #222;
+    }
+}
+p{
+    margin-bottom: 0;
+}
+/*Header*/
+header{
+    img{
+        width: 60px;
+        height: 50px;
+        margin-left: 7px;
+    }
+    h1{
+        color: #333;
+        font-family: $fuenteheader;
+        display: inline-flex;
+        position: absolute;
+        margin-left: 7px;
+    }
+    span{
+        font-family: $fuenteheader;
+        color: #D81F02;
+    }
+    a{
+        font-family: $fuenteheaderlinks;
+        color: #333;
+        margin-top: 5px;
+        font-size: 25px;
+        text-decoration: none;
+    }
+    a:hover{
+        background-color: #A68C6D;
+        transition: 0.8s;
+    }
+}
+ul{
+    margin-left: 120px;
+}
+nav{
+    background: rgb(235,220,203);
+    background: linear-gradient(90deg, rgba(235,220,203,1) 14%, rgba(195,186,170,1) 53%, rgba(210,187,160,1) 91%);
+}
+/* Etiquetas generales */
 body{
     line-height: 1.3;
     display: inline;
@@ -26,3 +87,870 @@ body{
         transition: 1s;
     }
 }
+/* Sucursales.html */
+iframe {
+    width: 600px; height: 400px;
+    margin-right: 10px;
+}
+.sucursales{
+    margin-top: 25px;
+    display:grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+    margin-left: 10px;
+    h3{
+        text-align: center;
+    }
+}
+.ubicacion{
+    h2{
+        text-align: center;
+        margin: 30px 0px 50px 0px;
+    }
+}
+/* Index.html */
+#carouselExampleIndicators{
+    h4{
+        margin-top: 40px;
+    }
+}
+.carousel-caption{
+    h5, p{
+        text-shadow: 0 0 8px #222;
+    }
+}
+.carousel-inner{
+        img{
+        box-shadow: 0 0 15px #222;
+        transform: scale(1) !important;
+        width: 700px; height: 500px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+.presentacion{
+    padding-bottom: 180px;
+    h3, h4{
+        text-align: center;
+        margin-left: 10px;
+    }
+}
+/* Nosotros.html */
+.nosotros{
+    h2{
+        margin-top: 10px;
+    }    
+    h3{
+        margin-top: 15px;
+        margin-left: 20px;
+        padding-bottom: 50px;
+        text-align: left;
+    }
+}
+/* Animales.html */
+.textos{
+    font-size: larger;
+    text-align: left !important;
+    margin-left: 20px;
+}
+.textoizq{
+    @extend .textos;
+    margin-right: 20px;
+}
+.textoder{
+    @extend .textos
+}
+#lena{
+    padding-top: 20px;
+    @include gato-izq;
+}
+#roger{
+    @include gato-der;
+}
+#killi{
+    @include gato-izq;
+}
+#ganga{
+    @include gato-der;
+}
+/* Etiquetas compartidas entre Index e Animales */
+.columnas{
+    padding-bottom: 120px;
+    font-size: 20px;
+    display:grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+}
+.columnas img {
+    width: 320px; height: 260px;
+}
+.imgmobile{
+    display: none;
+}
+/* Contacto.html */
+.btn{
+    padding: 0.93em 20px;
+}
+button{
+    span{
+        font-size: large;
+    }
+}
+.form-group{
+    margin-bottom: 25px;
+    margin-top: 30px;
+    width: 1200px;
+}
+/* Footer */
+.redesmobile{
+    display: none;
+}
+footer {
+    display: block;
+    background-color: map-get($colores, colorfooter);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 170px;
+}
+.arribafooter{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    h1{
+        font-family: $fuenteheader;
+        display: flex;
+        margin-left: 7px;
+    }
+    span {
+        font-family: 'Gotham Black', sans-serif;
+        color: #D81F02;
+    }
+    p {
+        font-family: 'Gotham Book', sans-serif;
+        margin-right: 20px;
+    }
+}
+.redes{
+    padding-left: 83px;
+    display: flex;
+    text-decoration:none;
+    a{
+        margin-left: 5px;
+    }
+    a:hover{
+        transform: scale(1.2);
+        transition: 1s;
+    }
+}
+.sucursalesfooter{
+    margin-top: 5px;
+    display:grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+}
+/* Base del menú hamburger */
+.hambugermobile{
+    display: none;
+}
+.top-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background: rgb(235,220,203);
+    background: linear-gradient(90deg, rgba(235,220,203,1) 14%, rgba(195,186,170,1) 53%, rgba(210,187,160,1) 91%);
+    color: #FFF;
+    height: 50px;
+    padding: 1em;
+    }
+.menu {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    }
+.menu > li {
+    margin: 0 1rem;
+    overflow: hidden;
+    }
+.menu-button-container {
+    display: none;
+    height: 100%;
+    width: 30px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+#menu-toggle {
+    display: none;
+    }
+    
+    .menu-button,
+    .menu-button::before,
+    .menu-button::after {
+    display: block;
+    background-color: #fff;
+    position: absolute;
+    height: 4px;
+    width: 30px;
+    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    border-radius: 2px;
+    }
+.menu-button::before {
+    content: '';
+    margin-top: -8px;
+    }
+.menu-button::after {
+    content: '';
+    margin-top: 8px;
+    }
+#menu-toggle:checked + .menu-button-container .menu-button::before {
+    margin-top: 0px;
+    transform: rotate(405deg);
+    }
+#menu-toggle:checked + .menu-button-container .menu-button {
+    background: rgba(255, 255, 255, 0);
+    }
+#menu-toggle:checked + .menu-button-container .menu-button::after {
+    margin-top: 0px;
+    transform: rotate(-405deg);
+    }
+    /* Menú hamburger a partir de los 1023PX*/
+    @media only screen and (max-width: 1023px) {
+        .navbar{
+            display: none;
+        }
+        *, ::after, ::before {
+            box-sizing: unset;
+        }
+        .hambugermobile{
+            display: block;
+            h1{
+                padding-top: 5px;
+                color: #222;
+            }
+        }
+        .menu-button-container {
+            left: 0;
+            display: flex;
+        }
+        .menu {
+            z-index:1;
+            position: absolute;
+            top: 0;
+            margin-top: 80px;
+            left: 0;
+            flex-direction: column;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+        #menu-toggle ~ .menu li {
+            height: 0;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        #menu-toggle:checked ~ .menu li {
+            border: 1px solid #333;
+            height: 2.5em;
+            padding: 0.5em;
+            transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .menu > li {
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0.5em 0;
+            width: 100%;
+            color: white;
+            background-color: #222;
+        }
+        .menu > li:not(:last-child) {
+            border-bottom: 1px solid #444;
+        }
+        li {
+            a{
+                margin-top: 8px;
+                color: #ffff;
+            }
+        }
+    }
+    /* Responsive */
+    @media only screen and (min-width: 1360px) and (max-width: 1800px){
+        .redes{
+            h1{
+                margin-right: 35%;
+            }
+            p{
+                margin-top: 10px;
+                margin-left: 27%;
+            }
+        }
+        .presentacion{
+            padding-bottom: 0px;
+        }
+        .carousel-inner{
+            img{
+            width: 700px; height: 500px;
+            }
+        }
+        iframe {
+            width: 600px; height: 400px;
+            margin-right: 10px;
+        }
+        .sucursales{
+            margin-top: 25px;
+            display:grid;
+            grid-template-rows: 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
+            text-align: center;
+            margin-left: 10px;
+            padding-bottom: 180px;
+        }
+        .sucursalmendoza{
+            padding-top: 10px;
+        }
+        .columnas{
+            margin-bottom: 60px;
+        }
+        .carousel-inner{
+            margin-bottom: 300px;
+        }
+    }
+    @media only screen and (min-width: 1024px) and (max-width: 1359px){
+        .sucursalesfooter{
+            grid-template-rows: 1fr;
+            grid-template-columns: 1fr 1fr;
+        }
+        .form-group{
+            margin-left: 35px;
+            width: 900px;
+        }
+        .sucur3 {
+            display: none;
+        }
+        iframe {
+            width: 480px; height: 300px;
+            margin-right: 10px;
+        }
+        .columnas{
+            margin-bottom: 20px;
+        }
+        .presentacion{
+            padding-bottom: 0px;
+        }
+        .carousel-inner{
+            img{
+            width: 600px; height: 450px;
+            }
+        }
+        .sucursales{
+            margin-top: 25px;
+            display:grid;
+            grid-template-rows: 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
+            text-align: center;
+            margin-left: 10px;
+            padding-bottom: 180px;
+        }
+        .sucursalmendoza{
+            padding-top: 10px;
+        }
+        .columnas{
+            padding-bottom: 150px;
+        }
+        .carousel-caption{
+            display: none !important;
+        }
+        .carousel-inner{
+            margin-bottom: 200px;
+        }
+    }
+    @media only screen and (min-width: 768px) and (max-width:1023px) {
+        footer{
+            position: fixed;
+        }
+        h1{
+            font-size: 35px;
+        }
+        h3{
+            font-size: larger;
+        }
+        form{
+            padding-bottom: 180px;
+        }
+        button{
+            margin-left: 15px;
+            margin-top: 20px;
+        }
+        .form-group{
+            margin-bottom: -10px;
+            margin-left: 15px;
+            width: 700px;
+        }
+        .sucursalesfooter{
+            grid-template-rows: 1fr;
+            grid-template-columns: 1fr 1fr;
+        }
+        .sucur3 {
+            display: none;
+        }
+        .presentacion{
+            padding-bottom: 0px;
+        }
+        .carousel-inner{
+            img{
+            width: 450px; height: 350px;
+            }
+        }
+        .menu{
+            width: 98.9%;
+        }
+        .columnas{
+            padding-bottom: 180px;
+            img{
+                margin-top: 75px;
+            }
+        }
+        .carousel-caption{
+            display: none !important;
+        }
+        .carousel-inner{
+            margin-bottom: 200px;
+        }
+        iframe {
+            width: 480px; height: 300px;
+            margin-right: 10px;
+        }
+        .sucursales{
+            margin-top: 25px;
+            display:grid;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-columns: 1fr;
+            text-align: center;
+            margin-left: 10px;
+            padding-bottom: 180px;
+        }
+        .sucursalcordoba{
+            padding-top: 10px;
+        }
+        .sucursalmendoza{
+            padding-top: 10px;
+        }
+    }
+    @media only screen and (min-width:600px) and (max-width:767px) {
+        footer{
+            height: 150px;
+        }
+        nav{
+            width: 20px; height: 20px;
+        }
+        h1{
+            font-size: 35px;
+        }
+        h3{
+            font-size: larger;
+        }
+        .presentacion{
+            padding-bottom: 0px;
+        }
+        .carousel-inner{
+            img{
+            width: 450px; height: 350px;
+            }
+        }
+        .carousel-caption{
+            display: none !important;
+        }
+        form{
+            padding-bottom: 180px;
+        }
+        button{
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+        .form-group{
+            margin-bottom: -10px;
+            margin-left: 20px;
+            width: 500px;
+        }
+        .sucursalesfooter{
+            grid-template-rows: 1fr;
+            grid-template-columns: 1fr;
+        }
+        .sucur2, .sucur3{
+            display: none;
+        }
+        .menu > li {
+            width: 97%;
+        }
+        .columnas{
+            padding-bottom: 100px;
+            img{
+                margin-top: 100px;
+                width: 300px; height: 250px;
+            }
+        }
+        .nosotros{
+            img{
+                width: 400px; height: 300px;
+            }
+        }
+        iframe {
+            width: 480px; height: 300px;
+            margin-right: 10px;
+        }
+        .sucursales{
+            margin-top: 25px;
+            display:grid;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-columns: 1fr;
+            text-align: center;
+            margin-left: 10px;
+            padding-bottom: 180px;
+        }
+        .sucursalcordoba{
+            padding-top: 10px;
+        }
+        .sucursalmendoza{
+            padding-top: 10px;
+        }
+        .redes{
+            display: none;
+        }
+        .redesmobile{
+            padding-left: 83px;
+            display: flex;
+            text-decoration:none;
+            a{
+                margin-left: 4px;
+                width: 32px; height: 10px;
+            }
+            a:hover{
+                transform: scale(1.1);
+                transition: 1s;
+            }
+        }
+    }
+        @media only screen and (min-width:480px) and (max-width:599px){
+            header{
+                width: 100%;
+            }
+            footer {
+                height: 160px;
+            }
+            .sucursalesfooter{
+                grid-template-rows: 1fr;
+                grid-template-columns: 1fr;
+            }
+            .sucur2, .sucur3{
+                display: none;
+            }
+            .container{
+                width: auto;
+            }
+            form{
+                width: 400px;
+                padding-bottom: 180px;
+            }
+            button{
+                margin-left: 25px;
+                margin-top: 20px;
+            }
+            .form-group{
+                margin-bottom: -10px;
+                margin-left: 25px;
+                width: 400px;
+            }
+            .presentacion{
+                padding-bottom: 0px;
+            }
+            .carousel-inner{
+                img{
+                width: 350px; height: 300px;
+                }
+            }
+            .carousel-caption{
+                display: none !important;
+            }
+            .nosotros{
+                img{
+                    width: 250px; height: 300px;
+                }
+            }
+            .menu {
+                margin-top:77px;
+                width: 100%;
+            }
+            h1{
+                font-size: 30px;
+            }
+            h3{
+                font-size: large;
+            }  
+            .columnas {
+                padding-bottom: 100px;
+                grid-template-rows: 1fr;
+                grid-template-columns: 1fr;
+                h3{
+                    font-size: 20px;
+                }
+                img{
+                    display: block;
+                }
+            }
+            .imgmobile{
+                display: block;
+            }
+            .imgdesktop{
+                display: none;
+            }
+            iframe {
+                width: 400px; height: 300px;
+                margin-right: 10px;
+            }
+            .sucursales{
+                margin-top: 10px;
+                display:grid;
+                grid-template-rows: 1fr 1fr 1fr;
+                grid-template-columns: 1fr;
+                text-align: center;
+                margin-left: 10px;
+                padding-bottom: 180px;
+            }
+            .sucursalcordoba{
+                padding-top: 10px;
+            }
+            .sucursalmendoza{
+                padding-top: 10px;
+            }
+            .textoder, .textoizq{
+                padding-right: 10px;
+            }
+            @mixin gato-imagen{
+                margin-bottom: 10px;
+                margin-left: 20px;
+                width: 410px;
+                height: 350px;
+            }
+            /* Plantilla para número impar */
+            #lena {
+                display: block;
+                img{
+                    @include gato-imagen
+                }
+            }
+            /* Plantilla para número par */
+            #roger{
+                display: block;
+                img{
+                    @include gato-imagen
+                }
+            }
+            #killi {
+                display: block;
+                img{
+                    @include gato-imagen
+                }
+            }
+            #ganga{
+                display: block;
+                img{
+                    @include gato-imagen
+                }
+            }
+            .redes{
+                display: none;
+            }
+            .redesmobile{
+                padding-left: 83px;
+                display: flex;
+                text-decoration:none;
+                a{
+                    margin-right: 8px;
+                    width: 26px; height: 26px;
+                }
+                a:hover{
+                    transform: scale(1.1);
+                    transition: 1s;
+                }
+            }
+            .arribafooter{
+                p{
+                    padding-right: 10px;
+                }
+            }
+            .columnas{
+                grid-template-rows: 1fr;
+                grid-template-columns: 1fr;
+                img{
+                    width: 300px; height: 200px;
+                }
+            }
+        }
+        @media only screen and (min-width:320px) and (max-width:479px){
+            header {
+                width: 100%;
+            }
+            .presentacion{
+                padding-right: 13px;
+            }
+            li {
+                a{
+                    margin-top: 2px;
+                    color: #ffff;
+                }
+            }
+            .menu {
+                margin-top: 70px;
+                width: 98%;
+            }
+            h1{
+                font-size: 30px;
+            }
+            .ubicacion{
+                h2{
+                    font-size: x-large;
+                }
+            }
+            p{
+                font-size: smaller;
+            }
+            h3{
+                font-size: 20px;
+            }       
+            body{
+                font-size: small;
+            }
+            .columnas{
+                padding-bottom: 120px;
+            }
+            .carousel-inner{
+                margin-left: 10px;
+                img{
+                width: 300px; height: 250px;
+                }
+            }
+            .carousel-caption{
+                display: none !important;
+            }
+            .nosotros img{
+                width: 250px; height: 300px;
+            }
+            iframe {
+                width: 300px; height: 200px;
+                margin-right: 10px;
+            }
+            .sucursales{
+                margin-top: 10px;
+                display:grid;
+                grid-template-rows: 1fr 1fr 1fr;
+                grid-template-columns: 1fr;
+                text-align: center;
+                margin-left: 10px;
+                padding-bottom: 180px;
+            }
+            .sucursalcordoba{
+                padding-top: 10px;
+            }
+            .sucursalmendoza{
+                padding-top: 10px;
+            }
+            .container{
+                width: auto;
+            }
+            form{
+                width: 400px;
+                padding-bottom: 180px;
+            }
+            button{
+                margin-left: 25px;
+                margin-top: 20px;
+            }
+            .form-group{
+                margin-bottom: -10px;
+                margin-left: 25px;
+                width: 250px;
+            }
+            .imgmobile{
+                display: block;
+            }
+            .imgdesktop{
+                display: none;
+            }
+            /* Plantilla para número impar */
+            @mixin gatoimpar{
+                margin-bottom: 20px;
+                margin-left: 13px;
+                width: 260px;
+                height: 250px;
+            }
+            @mixin gatopar{
+                margin-top: 20px;
+                margin-bottom: 20px;
+                margin-left: 30px;
+                width: 260px;
+                height: 250px;
+            }
+            #lena{
+                display: block;
+                img{
+                    @include gatoimpar
+                }
+            }
+            /* Plantilla para número par */
+            #roger{
+                display: block;
+                img{
+                    @include gatopar
+                }
+            }
+            #killi{
+                display: block;
+                img{
+                    @include gatoimpar
+                }
+            }
+            #ganga{
+                display: block;
+                img{
+                    @include gatopar
+                }
+            }
+            footer{
+                height: 140px;
+            }
+            .redes{
+                display: none;
+            }
+            .redesmobile{
+                padding-left: 25px;
+                padding-right: 25px;
+                display: flex;
+                text-decoration:none;
+                a{
+                    margin-left: 4px;
+                    width: 24px; height: 25px;
+                }
+                a:hover{
+                    transform: scale(1.2);
+                    transition: 1s;
+                }
+            }
+            .sucursalesfooter{
+                grid-template-rows: 1fr;
+                grid-template-columns: 1fr;
+            }
+            .sucur2, .sucur3{
+                display: none;
+            }
+        }
