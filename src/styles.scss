@@ -2,6 +2,12 @@ $fuenteprin: 'Gotham', sans-serif;
 $fuenteheader: 'Gotham Black', sans-serif;
 $fuenteheaderlinks: 'Gotham Light', sans-serif;
 /* ETIQUETA GENERAL */
+.success {
+    background-color: green;
+}
+.failed{
+    background-color: red;
+}
 *{
     font-family: $fuenteprin;
     margin: 0;

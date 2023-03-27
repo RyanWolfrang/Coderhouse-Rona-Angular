@@ -1,0 +1,22 @@
+<!-- <app-loading *ngIf="cargando"></app-loading> -->
+<h1>Listado de animales</h1>
+<thead>
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Edad</th>
+        <th>Descripción</th>
+        <th>Color</th>
+        <th></th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let animal of Animales"  [ngClass]="animal.esViejo ? 'success' : ''">
+        <td>{{animal.id}}</td>
+        <td>{{animal.nombre}}</td>
+        <td>{{animal.edad}}</td>
+        <td>{{animal.descripcion}}</td>
+        <td>{{animal.color}}</td>
+        <td><button [id]="animal.id" (click)="animal.alternarGatosViejos($event)">Alternar si el gato tiene más de 5 años.</button></td>
+    </tr>
+</tbody>

@@ -1,5 +1,13 @@
 @charset "UTF-8";
 /* ETIQUETA GENERAL */
+.success {
+  background-color: green;
+}
+
+.failed {
+  background-color: red;
+}
+
 * {
   font-family: "Gotham", sans-serif;
   margin: 0;
