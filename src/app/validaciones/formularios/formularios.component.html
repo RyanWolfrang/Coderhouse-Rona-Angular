@@ -10,6 +10,12 @@
         <small class="text-danger" *ngSwitchCase="'noMoon'">
             Moonset no tiene permitido estar aquí.
         </small>
+        <small class="text-danger" *ngSwitchCase="'email'">
+            Mail inválido.
+        </small>
+        <small class="text-danger" *ngSwitchDefault>
+            Error desconocido.
+        </small>
     </ng-container>
 </div>
 <!-- {{ error.value.['requiredLength'] }} -->

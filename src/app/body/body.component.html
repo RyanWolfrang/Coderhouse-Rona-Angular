@@ -30,14 +30,17 @@
 
                 <div class="form-group">
                     <input formControlName="email" type="email" class="form-control" name="usermail" id="usermail" placeholder="E-Mail...">
+                    <app-formularios *ngIf="emailControl.invalid && emailControl.touched" [formErrors]="emailControl.errors"></app-formularios>
                 </div>
 
                 <div class="form-group">
                     <input formControlName="asunto" type="text" class="form-control" name="subject" id="subject" placeholder="Asunto...">
+                    <app-formularios *ngIf="asuntoControl.invalid && asuntoControl.touched" [formErrors]="asuntoControl.errors"></app-formularios>
                 </div>
 
                 <div class="form-group">
                     <textarea formControlName="cuerpo" id="message"  class="form-control" rows="4" placeholder="Escriba aquí..."></textarea>
+                    <app-formularios *ngIf="cuerpoControl.invalid && cuerpoControl.touched" [formErrors]="cuerpoControl.errors"></app-formularios>
                 </div>
 
                 <button type="submit" class="btn btn-primary">Enviar</button>

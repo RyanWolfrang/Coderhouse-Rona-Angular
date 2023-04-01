@@ -18,6 +18,7 @@ export class BodyComponent {
 
   contactoForm: FormGroup;
 
+//Nombres
   nombreControl = new FormControl(
       '',
       [
@@ -27,9 +28,31 @@ export class BodyComponent {
       ]
     );
   
-  emailControl = new FormControl('');
-  asuntoControl = new FormControl('');
-  cuerpoControl = new FormControl('');
+//Mail
+  emailControl = new FormControl(
+      '',
+      [
+        Validators.required,
+        Validators.email,
+      ]
+    );
+
+//Asunto
+  asuntoControl = new FormControl(
+    '',
+    [
+      Validators.required
+    ]
+    );
+
+//Cuerpo
+  cuerpoControl = new FormControl(
+    '',
+    [
+      Validators.required,
+      Validators.minLength(10)
+    ]
+    );
 
   constructor(){
     this.contactoForm = new FormGroup({
