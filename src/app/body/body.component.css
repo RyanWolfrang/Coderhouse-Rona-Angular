@@ -1,1 +1,7 @@
-/*# sourceMappingURL=body.component.css.map */
+#salio-bien {
+  background-color: green;
+}
+
+td {
+  margin-right: 5px;
+}

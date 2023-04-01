@@ -1,5 +1,4 @@
 <div *ngFor="let error of formErrors | keyvalue">
-    <!-- {{ error | json }} -->
     <ng-container [ngSwitch]="error.key">
         <small class="text-danger" *ngSwitchCase="'required'">
             Este campo es requerido
@@ -18,4 +17,3 @@
         </small>
     </ng-container>
 </div>
-<!-- {{ error.value.['requiredLength'] }} -->
