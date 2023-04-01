@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Animal } from 'src/app/models';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-body',
@@ -12,6 +13,23 @@ export class BodyComponent implements OnInit {
     new Animal (1, "Lena", 3, "Descripción de prueba", "Negro", 3.400, "Prueba", false),
     new Animal (2, "Roger", 8, "Descripción de prueba 2", "Negro", 6.800, "Prueba2", true),
   ]
+
+  contactoForm: FormGroup;
+
+  nombreControl = new FormControl('Ejemplo Nombre');
+  emailControl = new FormControl('Ejemplo Mail');
+  asuntoControl = new FormControl('Ejemplo Asunto')
+  cuerpoControl = new FormControl('Mucho texto.')
+
+  constructor(){
+    this.contactoForm = new FormGroup({
+      nombre: this.nombreControl,
+      email: this.emailControl,
+      asunto: this.asuntoControl,
+      cuerpo: this.cuerpoControl,
+    });
+  }
+
   ngOnInit(): void {
     setTimeout(() => {
       this.cargando = false;

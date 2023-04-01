@@ -19,4 +19,25 @@
         <td>{{animal.color}}</td>
         <td><button [id]="animal.id" (click)="animal.alternarGatosViejos($event)">Alternar si el gato tiene más de 5 años.</button></td>
     </tr>
+    <div class="container">
+        <div class="row">
+            <form [formGroup]="contactoForm" role="form">
+                <div class="form-group">
+                    <input formControlName="nombre" type="text" class="form-control" name="username" id="username"  required="required" placeholder="Nombre completo...">
+                </div>
+                <div class="form-group">
+                    <input formControlName="email" type="email" class="form-control" name="usermail" id="usermail" placeholder="E-Mail..." required="required">
+                </div>
+                <div class="form-group">
+                    <input formControlName="asunto" type="text" class="form-control" name="subject" id="subject"  required="required" placeholder="Asunto...">
+                </div>
+                <div class="form-group">
+                    <textarea formControlName="cuerpo" name="message" id="message"  class="form-control" rows="4" placeholder="Escriba aquí..."  required="required"></textarea>
+                </div>
+                <button type="submit" value="Enviar" class="btn btn-primary">
+                    <span><strong>Enviar</strong></span>
+                </button>
+            </form>
+        </div>
+    </div>
 </tbody>

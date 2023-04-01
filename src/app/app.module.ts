@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { BodyComponent } from './body/body.component';
 import { LoadingModule } from 'src/app/shared/components/loading/loading.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { LoadingModule } from 'src/app/shared/components/loading/loading.module'
   ],
   imports: [
     BrowserModule,
-    LoadingModule
+    LoadingModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
