@@ -1,25 +1,35 @@
 import { Component, OnInit } from '@angular/core';
 import { Animal } from 'src/app/models';
-import { FormControl, FormGroup } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-body',
   templateUrl: './body.component.html',
   styleUrls: ['./body.component.scss']
 })
-export class BodyComponent implements OnInit {
+export class BodyComponent {
   public cargando = true;
   public Animales: Animal[] = [
     new Animal (1, "Lena", 3, "Descripción de prueba", "Negro", 3.400, "Prueba", false),
     new Animal (2, "Roger", 8, "Descripción de prueba 2", "Negro", 6.800, "Prueba2", true),
   ]
 
+  mailsEnviados: any[] = [];
+
   contactoForm: FormGroup;
 
-  nombreControl = new FormControl('Ejemplo Nombre');
-  emailControl = new FormControl('Ejemplo Mail');
-  asuntoControl = new FormControl('Ejemplo Asunto')
-  cuerpoControl = new FormControl('Mucho texto.')
+  nombreControl = new FormControl(
+      '',
+      [
+        Validators.required,
+        Validators.minLength(3),
+        this.noMoonValidator(),
+      ]
+    );
+  
+  emailControl = new FormControl('');
+  asuntoControl = new FormControl('');
+  cuerpoControl = new FormControl('');
 
   constructor(){
     this.contactoForm = new FormGroup({
@@ -30,12 +40,26 @@ export class BodyComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-    setTimeout(() => {
-      this.cargando = false;
-    }, 2000);
+  onSubmit(): void{
+    if(this.contactoForm.valid) {
+      this.mailsEnviados.push(this.contactoForm.value);
+      this.contactoForm.reset();
+    } else {
+      this.contactoForm.markAllAsTouched();
+    }
   }
 
+  noMoonValidator(): ValidatorFn {
+    return (control: AbstractControl): ValidationErrors | null => {
+      if (control.value?.toLowerCase().includes('moon')){
+        return{
+          noMoon: true
+        }
+      }
+
+      return null;
+    }
+  }
 }
 
 // "mascotas": [{

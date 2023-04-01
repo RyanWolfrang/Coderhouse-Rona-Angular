@@ -6,12 +6,14 @@ import { HeaderComponent } from './header/header.component';
 import { BodyComponent } from './body/body.component';
 import { LoadingModule } from 'src/app/shared/components/loading/loading.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormulariosComponent } from './validaciones/formularios/formularios.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    BodyComponent
+    BodyComponent,
+    FormulariosComponent
   ],
   imports: [
     BrowserModule,

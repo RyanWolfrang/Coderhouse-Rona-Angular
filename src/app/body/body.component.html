@@ -21,23 +21,31 @@
     </tr>
     <div class="container">
         <div class="row">
-            <form [formGroup]="contactoForm" role="form">
+            <form [formGroup]="contactoForm" (ngSubmit)="onSubmit()">
+
                 <div class="form-group">
-                    <input formControlName="nombre" type="text" class="form-control" name="username" id="username"  required="required" placeholder="Nombre completo...">
+                    <input formControlName="nombre"  type="text" [class.is-invalid]="nombreControl.invalid && nombreControl.touched" class="form-control" name="username" id="username" placeholder="Nombre completo...">
+                    <app-formularios *ngIf="nombreControl.invalid && nombreControl.touched" [formErrors]="nombreControl.errors"></app-formularios>
                 </div>
+
                 <div class="form-group">
-                    <input formControlName="email" type="email" class="form-control" name="usermail" id="usermail" placeholder="E-Mail..." required="required">
+                    <input formControlName="email" type="email" class="form-control" name="usermail" id="usermail" placeholder="E-Mail...">
                 </div>
+
                 <div class="form-group">
-                    <input formControlName="asunto" type="text" class="form-control" name="subject" id="subject"  required="required" placeholder="Asunto...">
+                    <input formControlName="asunto" type="text" class="form-control" name="subject" id="subject" placeholder="Asunto...">
                 </div>
+
                 <div class="form-group">
-                    <textarea formControlName="cuerpo" name="message" id="message"  class="form-control" rows="4" placeholder="Escriba aquí..."  required="required"></textarea>
+                    <textarea formControlName="cuerpo" id="message"  class="form-control" rows="4" placeholder="Escriba aquí..."></textarea>
                 </div>
-                <button type="submit" value="Enviar" class="btn btn-primary">
-                    <span><strong>Enviar</strong></span>
-                </button>
+
+                <button type="submit" class="btn btn-primary">Enviar</button>
+
             </form>
+            <pre>
+                {{ mailsEnviados | json }}
+            </pre>
         </div>
     </div>
 </tbody>
